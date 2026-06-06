@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="이지 — 퍼포먼스/콘텐츠 마케터 포트폴리오. ROAS 200%, 25개 캠페인, 연 8억 매출 기여."/>
+<title>이지 | 퍼포먼스 마케터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#F2A7B8;--pink-light:#FAE8ED;--pink-pale:#FDF4F6;--pink-mid:#E8899C;
+  --cream:#FBF7F2;--cream-dark:#F2EBE0;--brown:#3D2B1F;--brown-mid:#7A5C4E;--brown-light:#C4A99A;
+  --white:#FFFFFF;--grid-color:rgba(242,167,184,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--brown);font-size:15px;line-height:1.7}
+.grid-bg{background-image:linear-gradient(var(--grid-color) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);background-size:36px 36px}
+
+/* NAV */
+#nav-main{position:sticky;top:0;z-index:100;background:rgba(253,244,246,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,167,184,.3)}
+#nav-main nav{max-width:1080px;margin:0 auto;padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--brown)}
+.nav-logo strong{font-style:normal;font-weight:700;color:var(--pink-mid)}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:12px;font-weight:500;color:var(--brown-light);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color .2s;padding-bottom:2px;border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--pink-mid)}
+.nav-links a.active{color:var(--pink-mid);border-bottom-color:var(--pink-mid)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--brown-mid);border-radius:2px;transition:all .3s}
+.nav-mobile{display:none;flex-direction:column;background:rgba(253,244,246,0.98);border-bottom:1px solid rgba(242,167,184,.3);padding:16px 40px}
+.nav-mobile a{font-size:13px;font-weight:500;color:var(--brown-mid);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(242,167,184,.15);letter-spacing:0.08em;text-transform:uppercase}
+.nav-mobile a:last-child{border-bottom:none}
+.nav-mobile.open{display:flex}
+
+/* HERO */
+#section-hero{background:var(--pink-pale);padding:0;overflow:hidden}
+.hero-grid-wrap{background-image:linear-gradient(var(--grid-color) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);background-size:36px 36px;padding:80px 40px 72px}
+.hero-inner{max-width:960px;margin:0 auto;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--pink-mid);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:28px}
+.hero-eyebrow-line{width:28px;height:1px;background:var(--pink)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:var(--brown);line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px}
+.hero-headline em{font-style:italic;color:var(--pink-mid)}
+.hero-sub-name{font-family:'Noto Serif KR',serif;font-size:18px;color:var(--brown-mid);margin-bottom:36px;font-weight:400}
+.hero-badges{display:inline-flex;gap:0;border:1px solid rgba(242,167,184,.5);border-radius:16px;overflow:hidden;margin-bottom:40px;background:var(--white)}
+.hero-badge{padding:18px 32px;text-align:center;border-right:1px solid rgba(242,167,184,.3)}
+.hero-badge:last-child{border-right:none}
+.hero-badge strong{display:block;font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--pink-mid);line-height:1}
+.hero-badge span{font-size:11px;color:var(--brown-light);font-weight:500;margin-top:5px;display:block;text-transform:uppercase;letter-spacing:0.06em}
+.hero-cta{display:flex;gap:12px;justify-content:center}
+.btn-pink{background:var(--pink-mid);color:#fff;padding:13px 32px;border-radius:999px;font-size:13px;font-weight:700;border:none;cursor:pointer;letter-spacing:0.02em;transition:background .2s}
+.btn-pink:hover{background:var(--pink)}
+.btn-outline-pink{background:transparent;color:var(--pink-mid);padding:13px 32px;border-radius:999px;font-size:13px;font-weight:600;border:1.5px solid var(--pink);cursor:pointer;transition:background .2s}
+.btn-outline-pink:hover{background:var(--pink-light)}
+
+/* 섹션 공통 */
+.section-inner{max-width:960px;margin:0 auto;padding:88px 40px}
+.sec-eyebrow{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;font-weight:700;color:var(--pink-mid);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+.sec-eyebrow::before,.sec-eyebrow::after{content:'♡';font-size:9px;color:var(--pink)}
+.sec-title{font-family:'Noto Serif KR',serif;font-size:34px;font-weight:700;color:var(--brown);text-align:center;letter-spacing:-0.02em;line-height:1.25;margin-bottom:12px}
+.sec-sub{font-size:14px;color:var(--brown-light);text-align:center;line-height:1.8;max-width:520px;margin:0 auto 48px}
+
+/* CASES */
+#section-cases{background:var(--white)}
+.cases-list{display:flex;flex-direction:column}
+.case-row{padding:36px 0;border-top:1px dashed rgba(242,167,184,.5)}
+.case-row:last-child{border-bottom:1px dashed rgba(242,167,184,.5)}
+.case-row-header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.case-tag{font-size:10px;font-weight:700;color:var(--white);background:var(--pink-mid);padding:4px 12px;border-radius:999px;letter-spacing:0.08em;text-transform:uppercase}
+.case-row-title{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:var(--brown)}
+.case-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px 48px}
+.chart-item{display:flex;flex-direction:column;gap:8px}
+.chart-label-row{display:flex;align-items:center;justify-content:space-between}
+.chart-metric{font-size:13px;font-weight:600;color:var(--brown)}
+.chart-delta{font-size:11px;font-weight:700;color:var(--pink-mid);background:var(--pink-light);padding:2px 10px;border-radius:999px}
+.vbar-group{display:flex;align-items:flex-end;gap:10px;margin-top:6px}
+.vbar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.vbar-track{width:100%;height:100px;position:relative;background:var(--pink-pale);border-radius:8px 8px 0 0;overflow:hidden}
+.vbar{position:absolute;bottom:0;left:0;width:100%;border-radius:8px 8px 0 0;transition:height .8s cubic-bezier(.4,0,.2,1)}
+.vbar.before{background:rgba(242,167,184,.35)}
+.vbar.after{background:var(--pink-mid)}
+.vbar-val{font-size:12px;font-weight:700;color:var(--brown)}
+.vbar-tag{font-size:10px;color:var(--brown-light);letter-spacing:0.04em;text-transform:uppercase}
+
+/* 차트 초기 상태 (애니메이션용) */
+.animate-ready .vbar{height:0 !important}
+
+/* METRICS */
+#section-metrics{background:var(--pink-pale)}
+.metrics-card{background:var(--white);border-radius:20px;border:1px solid rgba(242,167,184,.3);padding:0 40px;box-shadow:0 4px 32px rgba(242,167,184,.1)}
+.metrics-timeline{display:flex;flex-direction:column}
+.metrics-year-block{display:grid;grid-template-columns:110px 1fr;gap:0 40px;padding:32px 0;border-bottom:1px dashed rgba(242,167,184,.4)}
+.metrics-year-block:last-child{border-bottom:none}
+.year-badge{display:flex;flex-direction:column;align-items:flex-end;gap:5px;padding-top:2px}
+.metrics-year-label{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--pink-mid);line-height:1}
+.metrics-year-role{font-size:10px;font-weight:700;color:var(--brown-light);letter-spacing:0.08em;text-transform:uppercase;text-align:right;background:var(--pink-light);padding:2px 8px;border-radius:999px}
+.metrics-list{list-style:none;display:flex;flex-direction:column}
+.metrics-item{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 16px;padding:12px 0;border-bottom:1px solid rgba(242,167,184,.15)}
+.metrics-item:last-child{border-bottom:none;padding-bottom:0}
+.metrics-item:first-child{padding-top:0}
+.metrics-project{font-size:14px;color:var(--brown);font-weight:500}
+.metrics-values{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-val{font-size:12px;color:var(--brown-light)}
+.metrics-val strong{color:var(--pink-mid);font-weight:700}
+
+/* 카운트업 */
+.count-num{display:inline}
+
+/* SKILLS */
+#section-skills{background:var(--cream-dark)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-group{background:var(--white);border-radius:16px;padding:28px 24px;border:1px solid rgba(242,167,184,.2)}
+.skill-group-title{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:var(--brown);margin-bottom:8px}
+.skill-group-divider{width:24px;height:2px;background:var(--pink);border-radius:999px;margin-bottom:20px}
+.skill-bar-list{display:flex;flex-direction:column;gap:16px}
+.skill-bar-item{display:flex;flex-direction:column;gap:6px}
+.skill-bar-header{display:flex;justify-content:space-between}
+.skill-name{font-size:13px;font-weight:500;color:var(--brown)}
+.skill-pct{font-size:12px;font-weight:700;color:var(--pink-mid)}
+.skill-track{width:100%;height:5px;background:var(--pink-pale);border-radius:999px;overflow:hidden}
+.skill-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pink) 0%,var(--pink-mid) 100%);width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
+
+/* CONTACT */
+#section-contact{background:var(--pink-light);padding:80px 40px;scroll-margin-top:56px}
+.contact-box{background:var(--white);border-radius:24px;border:1px solid rgba(242,167,184,.3);padding:56px 48px;text-align:center;max-width:600px;margin:0 auto;box-shadow:0 8px 40px rgba(242,167,184,.12)}
+.contact-deco{font-size:28px;margin-bottom:16px}
+.contact-title{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--brown);letter-spacing:-0.02em;margin-bottom:12px}
+.contact-sub{font-size:14px;color:var(--brown-light);line-height:1.8;margin-bottom:36px}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-pink-lg{background:var(--pink-mid);color:#fff;padding:14px 36px;border-radius:999px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:background .2s}
+.btn-pink-lg:hover{background:var(--pink)}
+.btn-outline-pink-lg{background:transparent;color:var(--pink-mid);padding:14px 36px;border-radius:999px;font-size:14px;font-weight:600;border:1.5px solid var(--pink);cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s}
+.btn-outline-pink-lg:hover{background:var(--pink-light)}
+
+/* FOOTER */
+#footer-main{background:var(--brown);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-name{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(251,247,242,.5)}
+.footer-copy{font-size:11px;color:rgba(251,247,242,.25);letter-spacing:0.06em}
+
+/* ── 모바일 반응형 ── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  #nav-main nav{padding:0 24px}
+  .hero-grid-wrap{padding:60px 24px 52px}
+  .hero-headline{font-size:40px}
+  .hero-badges{flex-direction:column;width:100%;border-radius:12px}
+  .hero-badge{border-right:none;border-bottom:1px solid rgba(242,167,184,.3);padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .hero-badge:last-child{border-bottom:none}
+  .hero-badge strong{font-size:28px}
+  .hero-cta{flex-direction:column;align-items:center}
+  .section-inner{padding:60px 24px}
+  .sec-title{font-size:26px}
+  .case-charts{grid-template-columns:1fr}
+  .metrics-year-block{grid-template-columns:80px 1fr;gap:0 20px}
+  .metrics-card{padding:0 20px}
+  .metrics-year-label{font-size:22px}
+  .skills-grid{grid-template-columns:1fr}
+  .contact-box{padding:36px 24px}
+  .contact-title{font-size:30px}
+  #section-contact{padding:60px 24px}
+  #footer-main{padding:24px;justify-content:center;text-align:center}
+}
+@media(max-width:480px){
+  .hero-headline{font-size:32px}
+  .hero-badge{padding:12px 20px}
+  .metrics-item{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header id="nav-main">
+  <nav>
+    <span class="nav-logo"><strong>이지</strong> · Performance Marketer</span>
+    <div class="nav-links">
+      <a href="#section-cases">Cases</a>
+      <a href="#section-metrics">Career</a>
+      <a href="#section-skills">Skills</a>
+      <a href="#section-contact">Contact</a>
+    </div>
+    <div class="nav-toggle" id="nav-toggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#section-cases" onclick="closeMenu()">Cases</a>
+    <a href="#section-metrics" onclick="closeMenu()">Career</a>
+    <a href="#section-skills" onclick="closeMenu()">Skills</a>
+    <a href="#section-contact" onclick="closeMenu()">Contact</a>
+  </div>
+</header>
+
+<main>
+
+<section id="section-hero">
+  <div class="hero-grid-wrap">
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Performance / Content Marketer · 3년차<span class="hero-eyebrow-line"></span></div>
+      <h1 class="hero-headline">광고비를 <em>매출로</em><br>바꾸는 마케터</h1>
+      <p class="hero-sub-name">이지</p>
+      <div class="hero-badges">
+        <div class="hero-badge"><strong>200%</strong><span>평균 ROAS</span></div>
+        <div class="hero-badge"><strong>25개</strong><span>캠페인</span></div>
+        <div class="hero-badge"><strong>8억+</strong><span>연 매출 기여</span></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-pink" onclick="document.querySelector('#section-contact').scrollIntoView({behavior:'smooth',block:'start'})">프로젝트 문의하기</button>
+        <button class="btn-outline-pink" onclick="const a=document.createElement('a');a.href='#';a.download='이지_이력서.pdf';a.click()">이력서 다운로드</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-cases">
+  <div class="section-inner">
+    <p class="sec-eyebrow">Case Studies</p>
+    <h2 class="sec-title">케이스 스터디</h2>
+    <p class="sec-sub">실제 집행한 캠페인의 before / after 성과입니다.</p>
+    <div class="cases-list">
+
+      <div class="case-row">
+        <div class="case-row-header">
+          <span class="case-tag">퍼포먼스</span>
+          <span class="case-row-title">이커머스 · 월 광고비 1천만원 캠페인</span>
+        </div>
+        <div class="case-charts animate-ready">
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">ROAS</span><span class="chart-delta">100% → 200%</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="50"></div></div><span class="vbar-val">100%</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">200%</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">월 매출 기여</span><span class="chart-delta">2배 성장</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="50"></div></div><span class="vbar-val">1천만</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">2천만</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-row">
+        <div class="case-row-header">
+          <span class="case-tag">SNS 운영</span>
+          <span class="case-row-title">스타트업 · 인스타그램 계정 성장</span>
+        </div>
+        <div class="case-charts animate-ready">
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">팔로워 수</span><span class="chart-delta">+6,000 (6개월)</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="25"></div></div><span class="vbar-val">2,000</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">8,000</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">성장률</span><span class="chart-delta">+300%</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="25"></div></div><span class="vbar-val">기준</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">×4</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-row">
+        <div class="case-row-header">
+          <span class="case-tag">콘텐츠 SEO</span>
+          <span class="case-row-title">로컬 트렌드 · 블로그 오가닉 유입 성장</span>
+        </div>
+        <div class="case-charts animate-ready">
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">월 블로그 방문자</span><span class="chart-delta">+2,500 (4개월)</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="17"></div></div><span class="vbar-val">500</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">3,000</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="chart-label-row"><span class="chart-metric">성장률</span><span class="chart-delta">+500%</span></div>
+            <div class="vbar-group">
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar before" data-h="17"></div></div><span class="vbar-val">기준</span><span class="vbar-tag">Before</span></div>
+              <div class="vbar-col"><div class="vbar-track"><div class="vbar after" data-h="100"></div></div><span class="vbar-val">×6</span><span class="vbar-tag">After</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="section-metrics" class="grid-bg">
+  <div class="section-inner">
+    <p class="sec-eyebrow">Career</p>
+    <h2 class="sec-title">3년간의 성과</h2>
+    <p class="sec-sub">주니어에서 매니저까지, 포지션과 함께 성장한 성과 기록입니다.</p>
+    <div class="metrics-card">
+      <div class="metrics-timeline">
+        <div class="metrics-year-block">
+          <div class="year-badge"><span class="metrics-year-label">2023</span><span class="metrics-year-role">주니어</span></div>
+          <ul class="metrics-list">
+            <li class="metrics-item"><span class="metrics-project">이커머스 A · 퍼포먼스 캠페인 첫 단독 운영</span><span class="metrics-values"><span class="metrics-val">ROAS <strong class="count-num" data-target="180" data-suffix="%">0%</strong></span><span class="metrics-val">캠페인 <strong class="count-num" data-target="7" data-suffix="개">0개</strong></span></span></li>
+            <li class="metrics-item"><span class="metrics-project">스타트업 B · SNS 콘텐츠 기획 및 운영</span><span class="metrics-values"><span class="metrics-val">팔로워 <strong class="count-num" data-target="3200" data-prefix="+">+0</strong></span><span class="metrics-val">6개월</span></span></li>
+            <li class="metrics-item"><span class="metrics-project">로컬 브랜드 C · 블로그 SEO 콘텐츠</span><span class="metrics-values"><span class="metrics-val">방문자 <strong>500 → 3,000</strong></span><span class="metrics-val">4개월</span></span></li>
+          </ul>
+        </div>
+        <div class="metrics-year-block">
+          <div class="year-badge"><span class="metrics-year-label">2024</span><span class="metrics-year-role">퍼포먼스 마케터</span></div>
+          <ul class="metrics-list">
+            <li class="metrics-item"><span class="metrics-project">이커머스 D · 월 광고비 1천만원 집행</span><span class="metrics-values"><span class="metrics-val">ROAS <strong class="count-num" data-target="200" data-suffix="%">0%</strong></span><span class="metrics-val">매출 기여 <strong>월 2천만원</strong></span></span></li>
+            <li class="metrics-item"><span class="metrics-project">패션 브랜드 E · 멀티채널 캠페인</span><span class="metrics-values"><span class="metrics-val">캠페인 <strong class="count-num" data-target="12" data-suffix="개">0개</strong></span><span class="metrics-val">연 매출 기여 <strong>5억+</strong></span></span></li>
+            <li class="metrics-item"><span class="metrics-project">스타트업 F · 인스타그램 팔로워 성장</span><span class="metrics-values"><span class="metrics-val">2,000 → <strong class="count-num" data-target="8000">0</strong></span><span class="metrics-val">6개월</span></span></li>
+          </ul>
+        </div>
+        <div class="metrics-year-block">
+          <div class="year-badge"><span class="metrics-year-label">2025</span><span class="metrics-year-role">매니저 · 자문</span></div>
+          <ul class="metrics-list">
+            <li class="metrics-item"><span class="metrics-project">복수 브랜드 · 캠페인 매니지먼트 및 전략 자문</span><span class="metrics-values"><span class="metrics-val">누적 캠페인 <strong class="count-num" data-target="25" data-suffix="개">0개</strong></span><span class="metrics-val">연 매출 기여 <strong>8억+</strong></span></span></li>
+            <li class="metrics-item"><span class="metrics-project">프리랜서 전환 · 마케팅 자문 포트폴리오 구축</span><span class="metrics-values"><span class="metrics-val">전략 · 실행 · 분석 <strong>풀사이클</strong></span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-skills">
+  <div class="section-inner">
+    <p class="sec-eyebrow">Skills</p>
+    <h2 class="sec-title">스킬 레벨</h2>
+    <p class="sec-sub">퍼포먼스부터 데이터 분석까지, 마케팅 전 과정을 커버합니다.</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-group-title">퍼포먼스 마케팅</p>
+        <div class="skill-group-divider"></div>
+        <div class="skill-bar-list">
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">Meta / Google Ads</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">캠페인 기획 · 운영</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">예산 최적화</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">콘텐츠 마케팅</p>
+        <div class="skill-group-divider"></div>
+        <div class="skill-bar-list">
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">SNS 콘텐츠 기획</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">카피라이팅</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">SEO · 블로그</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">데이터 분석</p>
+        <div class="skill-group-divider"></div>
+        <div class="skill-bar-list">
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">GA4</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">성과 리포팅</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-header"><span class="skill-name">A/B 테스트</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-contact" class="grid-bg" style="scroll-margin-top:56px">
+  <div class="contact-box">
+    <div class="contact-deco">♡</div>
+    <h2 class="contact-title">함께 일해요</h2>
+    <p class="contact-sub">퍼포먼스 캠페인, 콘텐츠 전략, 마케팅 자문<br>브랜드 성장을 위한 프로젝트라면 언제든 환영합니다.</p>
+    <div class="contact-actions">
+      <button class="btn-pink-lg" onclick="window.open('https://calendly.com/your-link','_blank')">일정 잡기 (Calendly)</button>
+      <button class="btn-outline-pink-lg" id="copy-email-btn" onclick="navigator.clipboard.writeText('hello@example.com').then(()=>{const b=document.getElementById('copy-email-btn');b.textContent='✓ 복사됨!';setTimeout(()=>{b.innerHTML='<span>📋</span>이메일 복사';},2000)})"><span>📋</span>이메일 복사</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="footer-main">
+  <span class="footer-name">이지 · Performance Marketer</span>
+  <span class="footer-copy">© 2026 All rights reserved.</span>
+</footer>
+
+<script>
+// ── 모바일 메뉴 ──
+function closeMenu(){document.getElementById('nav-mobile').classList.remove('open')}
+document.getElementById('nav-toggle').addEventListener('click',()=>{
+  document.getElementById('nav-mobile').classList.toggle('open')
+})
+
+// ── Nav 활성 섹션 하이라이트 ──
+const navLinks=document.querySelectorAll('.nav-links a')
+const sections=document.querySelectorAll('section[id]')
+const navObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('active'))
+      const active=document.querySelector(`.nav-links a[href="#${e.target.id}"]`)
+      if(active)active.classList.add('active')
+    }
+  })
+},{threshold:0.3,rootMargin:'-56px 0px 0px 0px'})
+sections.forEach(s=>navObserver.observe(s))
+
+// ── 카운트업 애니메이션 ──
+function countUp(el){
+  const target=+el.dataset.target
+  const prefix=el.dataset.prefix||''
+  const suffix=el.dataset.suffix||''
+  const duration=1200
+  const step=16
+  const increment=target/(duration/step)
+  let cur=0
+  const timer=setInterval(()=>{
+    cur=Math.min(cur+increment,target)
+    el.textContent=prefix+Math.round(cur).toLocaleString()+suffix
+    if(cur>=target)clearInterval(timer)
+  },step)
+}
+const countObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.count-num').forEach(countUp)
+      countObserver.unobserve(e.target)
+    }
+  })
+},{threshold:0.2})
+document.querySelectorAll('.metrics-year-block').forEach(b=>countObserver.observe(b))
+
+// ── 스킬 바 애니메이션 ──
+const skillObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-fill').forEach(f=>{
+        f.style.width=f.dataset.w+'%'
+      })
+      skillObserver.unobserve(e.target)
+    }
+  })
+},{threshold:0.2})
+document.querySelectorAll('.skill-group').forEach(g=>skillObserver.observe(g))
+
+// ── 차트 막대 애니메이션 ──
+const chartObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.remove('animate-ready')
+      e.target.querySelectorAll('.vbar').forEach(b=>{
+        b.style.height=b.dataset.h+'%'
+      })
+      chartObserver.unobserve(e.target)
+    }
+  })
+},{threshold:0.3})
+document.querySelectorAll('.case-charts').forEach(c=>chartObserver.observe(c))
+</script>
+</html>
